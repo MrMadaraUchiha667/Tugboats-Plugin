@@ -184,11 +184,24 @@ namespace Oxide.Plugins
         void Unload()
         {
             SaveData();
-            foreach (var player in BasePlayer.activePlayerList)
-            {
-                DestroyUI(player);
-            }
+
+            foreach (var timerEntry in TugboatTimers.Values)
+    {
+        if (timerEntry != null && !timerEntry.Destroyed)
+            timerEntry.Destroy();
+    }
+
+    TugboatTimers.Clear();
+
+    BoughtBoat.Clear();
+
+    Talkers.Clear();
+
+    foreach (var player in BasePlayer.activePlayerList)
+        {
+        DestroyUI(player);
         }
+}
 
         void SaveData()
         {
@@ -867,6 +880,33 @@ namespace Oxide.Plugins
 
         Dictionary<Tugboat, Timer> TugboatTimers = new Dictionary<Tugboat, Timer>();
 
+        void OnEntityKill(Tugboat tugboat)
+        {
+    RemoveSafety(tugboat);
+            }
+
+        void OnPlayerDisconnected(BasePlayer player, string reason)
+{
+    Talkers.Remove(player);
+
+    DestroyUI(player);
+
+        var ownedBoats = BoughtBoat
+        .Where(x => x.Value == player)
+        .Select(x => x.Key)
+        .ToList();
+
+        foreach (var boat in ownedBoats)
+    {
+        RemoveSafety(boat);
+    }
+}
+
+        void OnPlayerDeath(BasePlayer player, HitInfo info)
+        {
+    DestroyUI(player);
+            }
+
         void AddSafety(BasePlayer player, Tugboat tugboat)
         {
             BoughtBoat.Add(tugboat, player);
@@ -877,10 +917,14 @@ namespace Oxide.Plugins
 
         void RemoveSafety(Tugboat tugboat)
         {
-            BoughtBoat.Remove(tugboat);
-            RemoveTugboatTimer(tugboat);
-        }
+    if (tugboat == null)
+        return;
 
+    BoughtBoat.Remove(tugboat);
+
+    RemoveTugboatTimer(tugboat);
+            }
+			
         void AddTugboatTimer(Tugboat tugboat)
         {           
             TugboatTimers.Add(tugboat, timer.Once(config.safe_time, () =>
@@ -897,10 +941,16 @@ namespace Oxide.Plugins
 
         void RemoveTugboatTimer(Tugboat tugboat)
         {
-            Timer _timer;
-            if (!TugboatTimers.TryGetValue(tugboat, out _timer)) return;
-            if (_timer != null && !_timer.Destroyed) _timer.Destroy();
-            TugboatTimers.Remove(tugboat);
+                if (tugboat == null)
+        return;
+
+                if (!TugboatTimers.TryGetValue(tugboat, out Timer timerInstance))
+        return;
+
+                if (timerInstance != null && !timerInstance.Destroyed)
+                    timerInstance.Destroy();
+
+                    TugboatTimers.Remove(tugboat);
         }
 
         #endregion
