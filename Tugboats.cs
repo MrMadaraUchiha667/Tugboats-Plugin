@@ -240,21 +240,21 @@ namespace Oxide.Plugins
         {
             lang.RegisterMessages(new Dictionary<string, string>
             {
-                ["MissingNPC"] = "Could not find NPC shop keeper nearby.",
+                ["MissingNPC"] = "Não foi possível encontrar um NPC vendedor por perto.",
                 ["AddPointSuccess"] = "Saved new location: {0} to Fishing Village type: {1}",
                 ["NoSpawnRoom"] = "There is not enough room to spawn your boat.",
                 ["MissingItems"] = "You do not have enough items to build this vessle.",
                 ["RepossessNotification"] = "You have {0} seconds to claim your tugboat before it is repossessed. Enter the drivers seat to claim it.",
-                ["ReposessedNotification"] = "Your tugboat has been repossessed as you have not taken delivery.",
-                ["UITugboatOption"] = "How about a Tugboat?",
+                ["ReposessedNotification"] = "Seu Tugboat foi retomado, pois você não o recebeu.",
+                ["UITugboatOption"] = "Que tal um especial da casa Tugboat?",
                 ["UIOptionNumber_Revised"] = "0",
-                ["UIBoatVendorTitle"] = "Boat Vendor",
-                ["UIVendorText"] = "You will need some items so we can build this for you...",
-                ["BoatSpawnedNotification"] = "Your boat has been built and is waiting for you nearby.",
+                ["UIBoatVendorTitle"] = "Vendedor de Barcos",
+                ["UIVendorText"] = "Você precisará de alguns itens para que possamos construir isso para você...",
+                ["BoatSpawnedNotification"] = "Seu barco foi construído e está esperando por você aqui perto.",
                 ["hudLocationText"] = "<size=20>Tugboat</size>",
                 ["DisableNoclip"] = "Disable noclip to use this command.",
                 ["PurchaseLimit"] = "You have already purchased the maximum amount of boats this wipe - {0}.",
-                ["TugboatLimit"] = "You cannot purchase a tugboat right now as the server has reached capactiy.",
+                ["TugboatLimit"] = "Não é possível comprar um Tugboat neste momento, pois o servidor atingiu sua capacidade máxima.",
             }, this);
         }
 
