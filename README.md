@@ -46,18 +46,18 @@ o.reload Tugboats
 # 🔑 Permissões
 
 ```text
-pixelcraft.tug.use
-pixelcraft.tug.vip
-pixelcraft.tug.admin
+Tugboats.tug.use
+Tugboats.tug.vip
+Tugboats.tug.admin
 ```
 
 ## Descrição
 
 | Permissão              | Função                      |
 | ---------------------- | --------------------------- |
-| `pixelcraft.tug.use`   | Permite comprar Tugboats    |
-| `pixelcraft.tug.vip`   | Compra gratuita             |
-| `pixelcraft.tug.admin` | Funções administrativas     |
+| `Tugboats.tug.use`   | Permite comprar Tugboats    |
+| `Tugboats.tug.vip`   | Compra gratuita             |
+| `Tugboats.tug.admin` | Funções administrativas     |
 
 ---
 
