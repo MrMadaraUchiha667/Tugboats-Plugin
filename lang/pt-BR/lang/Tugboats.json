@@ -1,0 +1,17 @@
+{
+  "MissingNPC": "Não foi possível encontrar o NPC vendedor por perto.",
+  "AddPointSuccess": "Nova posição salva: {0} no tipo Fishing Village: {1}",
+  "NoSpawnRoom": "Não há espaço suficiente para spawnar seu barco.",
+  "MissingItems": "Você não tem os itens necessários para construir esta embarcação.",
+  "RepossessNotification": "Você tem {0} segundos para reivindicar seu Tugboat antes que ele seja removido. Entre no assento do motorista para reivindicar.",
+  "ReposessedNotification": "Seu Tugboat foi removido por não ter sido reivindicado.",
+  "UITugboatOption": "Que tal um Tugboat?",
+  "UIOptionNumber_Revised": "0",
+  "UIBoatVendorTitle": "Vendedor de Barcos",
+  "UIVendorText": "Você precisará de alguns itens para que possamos construir isso para você...",
+  "BoatSpawnedNotification": "Seu barco foi construído e está esperando por você nas proximidades.",
+  "hudLocationText": "<size=20>Tugboat</size>",
+  "DisableNoclip": "Desative o noclip para usar este comando.",
+  "PurchaseLimit": "Você já atingiu o limite máximo de barcos nesta wipe - {0}.",
+  "TugboatLimit": "Você não pode comprar um Tugboat agora, pois o servidor atingiu o limite de capacidade."
+}
